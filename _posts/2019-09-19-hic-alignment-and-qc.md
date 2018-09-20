@@ -50,12 +50,12 @@ If your QC wasn't great, you've tried analyzing your data and are being hindered
 
 One note about how matlock works: its filters are used to mark which read pairs need to be filtered out, then it filters out all the marked pairs. Read pairs might be flagged for removal for multiple reasons. There is one flag, `-f`, which is a bitmap that controls which filters will actually be used to remove alignments. The other filters only control which read pairs get marked for removal - you generally must set values for those filters AND specify a bitmap for `-f` to filter out alignments. Also, filtering is ALWAYS done on a pairwise basis. If one read in a pair is bad, both reads get filtered out.
 
-* -m: mark alignments with MAPQ less than a threshold for filtering out. Default: 20
-* -e: mark alignments with an edit distance greater than a threshold for filtering out. Default: 5
-* -l: mark alignments where the target is smaller than a threshold for filtering out. Default: 0
-* -x: mark alignments where the target is a member of a comma-separated list of SEQIDs for filtering out. This is used to remove all Hi-C data for a particular set of contigs/SEQIDs from the BAM. Default: none
-* -y: invert the behavior for contigs specified with -x, only including alignments involving those contigs/SEQIDs instead of excluding. Default: exclude
-* -f: binary flag filter controlling the reasons a read pair should be excluded
+* __`-m`__: mark alignments with MAPQ less than a threshold for filtering out. Default: 20
+* __`-e`__: mark alignments with an edit distance greater than a threshold for filtering out. Default: 5
+* __`-l`__: mark alignments where the target is smaller than a threshold for filtering out. Default: 0
+* __`-x`__: mark alignments where the target is a member of a comma-separated list of SEQIDs for filtering out. This is used to remove all Hi-C data for a particular set of contigs/SEQIDs from the BAM. Default: none
+* __`-y`__: invert the behavior for contigs specified with -x, only including alignments involving those contigs/SEQIDs instead of excluding. Default: exclude
+* __`-f`__: binary flag filter controlling the reasons a read pair should be excluded
 ** SAME_SEQID  =  2
 ** LOW_MAPQ    =  4
 ** XA_SA       =  8
