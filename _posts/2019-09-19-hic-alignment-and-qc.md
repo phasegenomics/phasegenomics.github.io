@@ -10,6 +10,8 @@ Our Hi-C kits and protocols have been optimized to generate more useful Hi-C rea
 
 We recommend the following steps for alignment and QC of our data. It's the method we use ourselves as well - there are no proprietary alignment tricks we use.
 
+[!alt icon](https://phasegenomics.github.io/2019/09/19/hic-alignment-and-qc.html)
+
 1   Alignment
 ---------------------
 ### Short Answer
