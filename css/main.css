@@ -41,9 +41,12 @@ h3 {
 
 p, li {
     font-size: 1em;
-    line-height: 1em;
     color: #466880;
     font-family: 'Montserrat', sans-serif;
+}
+code {
+    font-size: 1em;
+    color: #466880;
 }
 footer {
     border-top: 1px solid #d5d5d5;
