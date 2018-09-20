@@ -54,24 +54,29 @@ Optical mapping can be used to correct errors in the assembly and to perform ini
 
 3    Common problems in assemblies
 ---------------------
+
 ### Low contiguity
-Low contiguity assemblies tend to have very large numbers of contigs. This greatly increases the complexity of the scaffolding problem, and the opportunities to make mistakes. 
+Low contiguity assemblies tend to have very large numbers of contigs. This greatly increases the complexity of the scaffolding problem, and the opportunities to make mistakes. The best way to avoid the problem of low contiguity is to use high-quality starting data (PacBio reads) at high coverage.
 
 Contiguity is normally measured using N50, which is a statistic summarizing the size distribution of sequences. Briefly, the N50 of an assembly is the length of the sequence in the assembly for which at least half of the total sequence length of the assembly is in sequences at least as large as this one. 
 
 All else being equal, you want your N50 to be as large as possible. The N50 of the assembly will howerver depend a lot on the genome size and chromosome sizes of the species. For example, we like having N50 > 1Mbp for large genome assemblies, but N50 = 1Mbp would be very suspicious for a brewer's yeast (_Saccharomyces cerevisiae_) assembly, as most of the chromosomes of this organism are <1Mbp in length and the total genome size is only 12Mbp. 
 
-For a standard large eukaryotic genome (~1Gbp), we observe that Hi-C scaffolding usually works well if the assembly is low in errors and the starting N50 is 1Mbp or more. For this reason, we recommend that customers desiring high-quality chromosome-scale scaffolds should aim for this N50. While it is possible to go substantially lower (we have successfully scaffolded large assemblies with N50 ~ 50Kbp), results are much less reliable. 
+For a standard large eukaryotic genome (~1Gbp), __we observe that Hi-C scaffolding usually works well if the assembly is low in errors and the starting N50 is 1Mbp or more__. For this reason, we recommend that customers desiring high-quality chromosome-scale scaffolds should aim for this N50. While it is possible to go substantially lower (we have successfully scaffolded large assemblies with N50 ~ 50Kbp), results are much less reliable. 
 
-While high contiguity is desirable, it is dangerous to increase contiguity by introducing low-confidence joins of contigs. For Hi-C scaffolding we will always prefer a less contiguous assembly with high-confidence scaffolds to a more contiguous assembly with low-confidence scaffolds.  
+While high contiguity is desirable, it is dangerous to increase contiguity by introducing low-confidence joins of contigs. __For Hi-C scaffolding we will always prefer a less contiguous assembly with high-confidence scaffolds to a more contiguous assembly with low-confidence scaffolds__ (see next section). However it is difficult to directly express this tradeoff numerically. 
 
 ### Chimeric contigs/scaffolds
-Erroneously joined sequences in the starting assembly create problems in scaffolding, as different pieces of the same contig or scaffold provide refractory signals. Therefore, this fraction should be as low as possible. Very low levels of chimerism can be accommodated and corrected using Hi-C data. As an example of chimerism in a Hi-C contact map see Figure 1, in which three large chimeric contigs are in the selection (black boxes represent selected contigs). Chimeric contigs contain distinct "squares" of contacts that in turn do not interact with each other.
+Erroneously joined sequences in the starting assembly create problems in scaffolding, as different pieces of the same contig or scaffold provide refractory signals. Therefore, this fraction should be as low as possible. The best way to avoid chimeric sequences is to use high-quality starting data (PacBio reads) at high coverage and to be stringent in scaffolding.
+
+Very low levels of chimerism can be accommodated and corrected using Hi-C data. As an example of chimerism in a Hi-C contact map see Figure 1, in which three large chimeric contigs are in the selection (black boxes represent selected contigs). Chimeric contigs contain distinct "squares" of contacts that in turn do not interact with each other.
 
 ![three large chimeric contigs selected](https://github.com/phasegenomics/phasegenomics.github.io/blob/assembly_reqs/images/chimeric_contigs.png)
 
 ### Heterozygosity
-If there is heterozygosity in the starting assembly, this will lead to additional sequences being present that are homologous to some other sequence in the assembly. This can be ok if this is intentional (_e.g._ it is a diploid assembly or contains homeologs), but if the assembly is intended to be a single haploid sequence it will not represent linear sequence well and may contain spurious repeats. In each of these cases, Hi-C reads will be relatively difficult to map uniquely and therefore the signal useable for scaffolding will be weaker overall than for a haploid assembly. For an example of what homologous sequences look like on a Hi-C contact map, see Figure 2. This example shows how complex the situation can get in a repeat-rich genome, in that the homology is observed both within and between contigs.
+If there is heterozygosity in the starting assembly, this will lead to additional sequences being present that are homologous to some other sequence in the assembly. This can be ok if this is intentional (_e.g._ it is a diploid assembly or contains homeologs), but if the assembly is intended to be a single haploid sequence it will not represent linear sequence well and may contain spurious repeats. In each of these cases, Hi-C reads will be relatively difficult to map uniquely and therefore the signal useable for scaffolding will be weaker overall than for a haploid assembly. 
+
+For an example of what homologous sequences look like on a Hi-C contact map, see Figure 2. This example shows how complex the situation can get in a repeat-rich genome, in that the homology is observed both within and between contigs.
 
 ![homology within and between contigs](https://github.com/phasegenomics/phasegenomics.github.io/blob/assembly_reqs/images/homologous_contigs.png)
 Figure 2.
