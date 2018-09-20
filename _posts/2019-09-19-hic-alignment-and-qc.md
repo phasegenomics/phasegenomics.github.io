@@ -2,6 +2,7 @@
 layout: post
 title: "Aligning and QCing Phase Genomics Hi-C Data"
 date: 2019-09-19
+description: "Proper alignment and QC of Hi-C data is critical to getting great analytical results. Phase Genomics Hi-C kits include protocol optimizations that may make the data slightly different than what you may be used to with other Hi-C preps. Our specific recommendations for aligning, QCing, and optionally filtering data from our protocols will help you get the most out of your data."
 ---
 Proper alignment of Hi-C data is critical to getting great results. It's also the best way to QC a Hi-C library — Phase Genomics recommends obtaining 1-5M read pairs and using them for QC prior to deep sequencing whenever practical.
 
