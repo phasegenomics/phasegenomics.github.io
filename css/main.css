@@ -1,7 +1,6 @@
 body {
-    margin: 0px auto;
+    margin: 0px;
     width: 70%;
-    padding-bottom: 0px;
 }
 nav ul, footer ul {
 	font-family: 'Montserrat', sans-serif;
