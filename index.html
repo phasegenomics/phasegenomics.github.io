@@ -8,9 +8,9 @@ title: Phase Genomics Software & Bioinformatics Documentation
 	
 	<h1>Documentation</h1>
 	<ul class="posts">
-	{% for doc in site.docs %}
+	{% for post in site.posts %}
 		<p>Document:</p>
-		<li><span>{{ doc.date | date_to_string }}</span> » <a href="{{ doc.url }}" title="{{ doc.title }}">{{ doc.title }}</a></li>
+		<li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
 	{% endfor %}
 	</ul>
 </div><!-- /.blurb -->
