@@ -3,9 +3,6 @@ layout: post
 title: "Aligning and QCing Phase Genomics Hi-C Data"
 date: 2019-09-19
 ---
-Aligning and QCing Phase Genomics Hi-C Data
-====================
-
 Proper alignment of Hi-C data is critical to getting great results. It's also the best way to QC a Hi-C library — Phase Genomics recommends obtaining 1-5M read pairs and using them for QC prior to deep sequencing whenever practical.
 
 Our Hi-C kits and protocols have been optimized to generate more useful Hi-C reads by doing things like reducing the proportion of split reads in the library. This means that the guidelines offered for other forms of Hi-C data may be incorrect with data from our kits, and that tools which infer library quality from the proportion of split reads (such as [HiCUP](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4706059/)) do not generate a reliable QC signal.
