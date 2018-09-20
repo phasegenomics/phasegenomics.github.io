@@ -3,7 +3,8 @@ layout: post
 title: "Aligning and QCing Phase Genomics Hi-C Data"
 date: 2019-09-19
 ---
-#Aligning and QCing Phase Genomics Hi-C Data
+Aligning and QCing Phase Genomics Hi-C Data
+====================
 
 Proper alignment of Hi-C data is critical to getting great results. It's also the best way to QC a Hi-C library — Phase Genomics recommends obtaining 1-5M read pairs and using them for QC prior to deep sequencing whenever practical.
 
@@ -11,7 +12,8 @@ Our Hi-C kits and protocols have been optimized to generate more useful Hi-C rea
 
 We recommend the following steps for alignment and QC of our data. It's the method we use ourselves as well - there are no proprietary alignment tricks we use.
 
-##Alignment
+Alignment
+---------------------
 ###Short Answer
 1. Align your Hi-C data with `“bwa mem -5SP [assembly.fasta] [fwd_hic.fastq] [rev_hic.fastq] | samtools view -S -h -b -F 2316 > [aligned.bam]“`
 
@@ -20,7 +22,8 @@ Alignment of Hi-C data typically requires the use of an aligner that has been mo
 
 We use `bwa mem` to align Hi-C data, with the `-5`, `-S`, and `-P` options. These options aren't documented that well in the online bwa documentation, but they are documented in the usage of `bwa mem`. `-5` is sometimes called "the Hi-C option" as it was designed to help the aligner handle the statistical properties of Hi-C libraries better, mainly by reducing the amount of secondard and alternate mappings the aligner makes as those cause Hi-C data to become ambiguous. The `-S` and `-P` options cause the aligner not to try to use assumptions about the reads that might be true for shotgun or mate pair libraries in an effort to rescue more reads. In fact, using these options to avoid those rescue efforts usually results in more of the Hi-C data having a useful alignment!
 
-##QC
+QC
+---------------------
 ###Short Answer
 1. After aligning, run our QC tool [bam_to_mate_hist.py](https://github.com/phasegenomics/bam_to_mate_hist) with `bam_to_mate_hist.py -b [aligned.bam] -r -o [output_file_prefix]`. The report it generates includes a sequencing recommendation; [contact us](mailto:support@phasegenomics.com) if you don't get a "Pass" and be sure to attach your report.
 
@@ -32,7 +35,8 @@ The best way to know if a Hi-C library worked is to look at how much long-range 
 * __Low Signal__ means that the library contains good Hi-C signal, but it's in lower proportion than usual. These libraries are generally good for generating useful Hi-C data, but you may need to sequence a little deeper than normal to get enough of it. You might consider size selecting the library to discard reads outside the 300-700bp range, as these are unlikely to be good Hi-C junctions. Alternatively, you might just want to prep a new library.
 * __Fail__ means that the library, or perhaps the way the library aligned to the assembly, does not look useful. Sometimes size selection can rescue such libraries, but sometimes a new prep is required. [Contact us](support@phasegenomics.com) if you get a fail and we will help you out.
 
-##Optional: Filtering Alignments
+Optional: Filtering Alignments
+---------------------
 ###Short Answer
 1. If you want to filter your Hi-C data (usually not necessary), use our tool [Matlock](https://github.com/phasegenomics/matlock) with `matlock bamfilt -i [aligned.bam] -o [aligned_filtered.bam`. Feel free to experiment with filtering options, but we recommend starting with the defaults.
 
@@ -47,14 +51,14 @@ One note about how matlock works: its filters are used to mark which read pairs 
 * -x: mark alignments where the target is a member of a comma-separated list of SEQIDs for filtering out. This is used to remove all Hi-C data for a particular set of contigs/SEQIDs from the BAM. Default: none
 * -y: invert the behavior for contigs specified with -x, only including alignments involving those contigs/SEQIDs instead of excluding. Default: exclude
 * -f: binary flag filter controlling the reasons a read pair should be excluded
-**SAME_SEQID  =  2
-**LOW_MAPQ    =  4
-**XA_SA       =  8
-**NM          = 16
-**SMALLCONTIG = 32
-**EXCLUDE     = 64
-**SA_ONLY     = 128
-**Default: 20 =  LOW_MAPQ | NM 
+** SAME_SEQID  =  2
+** LOW_MAPQ    =  4
+** XA_SA       =  8
+** NM          = 16
+** SMALLCONTIG = 32
+** EXCLUDE     = 64
+** SA_ONLY     = 128
+** Default: 20 =  LOW_MAPQ | NM 
 
 Unless your library was questionable and you are attempting to rescue it, we don’t recommend using Matlock until you look at the unfiltered results, however, as for most genomes filtering beyond the above samtools filter is unnecessary. You may use bam_to_mate_hist.py to QC your filtered library as well.
 
