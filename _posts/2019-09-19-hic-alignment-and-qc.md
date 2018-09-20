@@ -26,6 +26,7 @@ We use `bwa mem` to align Hi-C data, with the `-5`, `-S`, and `-P` options. Thes
 ### Short Answer
 After aligning, run our QC tool [bam_to_mate_hist.py](https://github.com/phasegenomics/bam_to_mate_hist) with: 
 > `bam_to_mate_hist.py -b [aligned.bam] -r -o [output_file_prefix]`
+
 The report it generates includes a sequencing recommendation; [contact us](mailto:support@phasegenomics.com) if you don't get a "Pass" and be sure to attach your report.
 
 ### More Details
@@ -41,6 +42,7 @@ The best way to know if a Hi-C library worked is to look at how much long-range 
 ### Short Answer
 If you want to filter your Hi-C data (usually not necessary), use our tool [Matlock](https://github.com/phasegenomics/matlock) with:
 >`matlock bamfilt -i [aligned.bam] -o [aligned_filtered.bam`
+
 Feel free to experiment with filtering options, but we recommend starting with the defaults.
 
 ### More Details
