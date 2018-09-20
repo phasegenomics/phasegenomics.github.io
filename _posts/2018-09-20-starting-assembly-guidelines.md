@@ -63,7 +63,7 @@ Erroneously joined sequences in the starting assembly create problems in scaffol
 ![three large chimeric contigs selected](https://github.com/phasegenomics/phasegenomics.github.io/blob/assembly_reqs/images/chimeric_contigs.png)
 
 ### Heterozygosity
-If there is heterozygosity in the starting assembly, this will lead to additional sequences being present that are homologous to some other sequence in the assembly. This can be ok if this is intentional (_e.g._ it is a diploid assembly or contains homeologs), but if the assembly is intended to be a single haploid sequence it will not represent linear sequence well and may contain spurious repeats. In each of these cases, Hi-C reads will be relatively difficult to map uniquely and therefore the signal useable for scaffolding will be weaker overall than for a haploid assembly. For an example of what homologous sequences look like on a Hi-C contact map, see Figure 2. 
+If there is heterozygosity in the starting assembly, this will lead to additional sequences being present that are homologous to some other sequence in the assembly. This can be ok if this is intentional (_e.g._ it is a diploid assembly or contains homeologs), but if the assembly is intended to be a single haploid sequence it will not represent linear sequence well and may contain spurious repeats. In each of these cases, Hi-C reads will be relatively difficult to map uniquely and therefore the signal useable for scaffolding will be weaker overall than for a haploid assembly. For an example of what homologous sequences look like on a Hi-C contact map, see Figure 2. This example shows how complex the situation can get in a repeat-rich genome, in that the homology is observed both within and between contigs.
 
 ![homology within and between contigs](https://github.com/phasegenomics/phasegenomics.github.io/blob/assembly_reqs/images/homologous_contigs.png)
 Figure 2.
@@ -71,8 +71,22 @@ Figure 2.
 
 4     Fixing problems in assemblies
 ---------------------
+We have various options for trying to fix up an assembly with the above issues.
 
 ### Break contigs --> fixes chimeric contigs
+There are a few ways to break starting contigs/scaffolds: 
+
+##### Split on gaps
+One is to simply split every sequence on gaps in the assembly, where a gap is defined as a stretch of Ns of at least some length (2 or 10 usually). 
+
+##### Polar_star
+If you are using PacBio or Nanopore reads, another method is to use our tool [polar_star](https://github.com/phasegenomics/polar_star). This tool takes your PacBio subreads (or in principle ONT reads), aligns them to your assembly, and breaks the assembly in places where long read coverage fluctuates.
+
+##### Manual contig breaking
+Use Juicebox or a similar tool to manually break contigs and make a new assembly.
 
 ### Manual polishing
+We will frequently perform manual fixes of an assembly using the Juicebox tool. This visualizer and interactive assembly editor is a great way to fix the last 1% of problems that benefit from human eyes after Proximo has done 99% of the work. You can move contigs, invert contigs, and break contigs in this tool. Remaking an assembly FASTA from Juicebox fixes is a little hard and not automatic, but we are working on tools that allow us to do this. 
+
+### Remove homologous sequences
 
