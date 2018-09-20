@@ -62,3 +62,7 @@ ul.posts li {
 .tight-top {
 	margin-top: 0px;
 }
+
+.tight-bottom {
+	margin-bottom: 0px;
+}
