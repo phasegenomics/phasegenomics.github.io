@@ -31,7 +31,7 @@ __Long read assemblies are strongly encouraged__, as they lead to extremely cont
 
 __Short read assemblies are not encouraged but can be "good enough" for simple genomes with low repeat content__. Short read assemblies tend to collapse repetitive sequences and yield low contiguity assemblies with large numbers of contigs. These assemblies are difficult to scaffold due to their high complexity.
 
-__Mate pair assemblies perform poorly__. While we are still accepting mate pair assemblies at the time of writing, they are quite difficult to work with. Mate pair scaffolding joins short-read contigs together with long-range inserts. Unfortunately, this process is error-prone and leads to frequent misjoins, leading to extensive chimerism in the resulting scaffolds. Hi-C performs badly when there are high levels of chimerism in the starting assembly (see below).
+__Mate pair assemblies perform poorly__. While we are still accepting mate pair assemblies at the time of writing, they are quite difficult to work with. Mate pair scaffolding joins short-read contigs together with long-range inserts. Unfortunately, this process is error-prone and leads to frequent misjoins, leading to extensive chimerism in the resulting scaffolds. Hi-C performs badly when there are high levels of chimerism in the starting assembly (see below). If we are given an assembly scaffolded with mate-pairs, we tend to simply break it back into contigs and try to treat it as a short-read assembly.
 
 ### Assembly software
 
@@ -56,6 +56,14 @@ Optical mapping can be used to correct errors in the assembly and to perform ini
 ---------------------
 ### Low contiguity
 Low contiguity assemblies tend to have very large numbers of contigs. This greatly increases the complexity of the scaffolding problem, and the opportunities to make mistakes. 
+
+Contiguity is normally measured using N50, which is a statistic summarizing the size distribution of sequences. Briefly, the N50 of an assembly is the length of the sequence in the assembly for which at least half of the total sequence length of the assembly is in sequences at least as large as this one. 
+
+All else being equal, you want your N50 to be as large as possible. The N50 of the assembly will howerver depend a lot on the genome size and chromosome sizes of the species. For example, we like having N50 > 1Mbp for large genome assemblies, but N50 = 1Mbp would be very suspicious for a brewer's yeast (_Saccharomyces cerevisiae_) assembly, as most of the chromosomes of this organism are <1Mbp in length and the total genome size is only 12Mbp. 
+
+For a standard large eukaryotic genome (~1Gbp), we observe that Hi-C scaffolding usually works well if the assembly is low in errors and the starting N50 is 1Mbp or more. For this reason, we recommend that customers desiring high-quality chromosome-scale scaffolds should aim for this N50. While it is possible to go substantially lower (we have successfully scaffolded large assemblies with N50 ~ 50Kbp), results are much less reliable. 
+
+While high contiguity is desirable, it is dangerous to increase contiguity by introducing low-confidence joins of contigs. For Hi-C scaffolding we will always prefer a less contiguous assembly with high-confidence scaffolds to a more contiguous assembly with low-confidence scaffolds.  
 
 ### Chimeric contigs/scaffolds
 Erroneously joined sequences in the starting assembly create problems in scaffolding, as different pieces of the same contig or scaffold provide refractory signals. Therefore, this fraction should be as low as possible. Very low levels of chimerism can be accommodated and corrected using Hi-C data. As an example of chimerism in a Hi-C contact map see Figure 1, in which three large chimeric contigs are in the selection (black boxes represent selected contigs). Chimeric contigs contain distinct "squares" of contacts that in turn do not interact with each other.
@@ -83,10 +91,10 @@ One is to simply split every sequence on gaps in the assembly, where a gap is de
 If you are using PacBio or Nanopore reads, another method is to use our tool [polar_star](https://github.com/phasegenomics/polar_star). This tool takes your PacBio subreads (or in principle ONT reads), aligns them to your assembly, and breaks the assembly in places where long read coverage fluctuates.
 
 ##### Manual contig breaking
-Use Juicebox or a similar tool to manually break contigs and make a new assembly.
+If you have aligned Hi-C data, you can use Juicebox or a similar tool to manually break contigs and make a new assembly.
 
 ### Manual polishing
-We will frequently perform manual fixes of an assembly using the Juicebox tool. This visualizer and interactive assembly editor is a great way to fix the last 1% of problems that benefit from human eyes after Proximo has done 99% of the work. You can move contigs, invert contigs, and break contigs in this tool. Remaking an assembly FASTA from Juicebox fixes is a little hard and not automatic, but we are working on tools that allow us to do this. 
+We will frequently perform manual fixes of an assembly using the Juicebox tool for visualizing Hi-C data aligned to an assembly. This visualizer and interactive assembly editor is a great way to fix the last 1% of problems that benefit from human eyes after Proximo has done 99% of the work. You can move contigs, invert contigs, and break contigs in this tool. Remaking an assembly FASTA from Juicebox fixes is a little hard and not automatic, but we are working on tools that allow us to do this. 
 
 ### Remove homologous sequences
 
