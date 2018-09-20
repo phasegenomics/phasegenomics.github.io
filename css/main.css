@@ -40,6 +40,12 @@ h3 {
     font-style: italic;
 }
 
+code {
+    font-size: 1em;
+    line-height: 1.4em;
+    color: #466880;
+}
+
 p, li {
     font-size: 1em;
     line-height: 1.4em;
