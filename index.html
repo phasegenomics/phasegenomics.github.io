@@ -5,4 +5,11 @@ title: Phase Genomics Software & Bioinformatics Documentation
 <div class="blurb">
 	<h1>Coming soon</h1>
 	<p>Phase Genomics official software & bioinformatics documentation</p>
+	
+	<h1>Documentation</h1>
+	<ul class="posts">
+	{% for doc in site.docs %}
+		<li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	{% endfor %}
+	</ul>
 </div><!-- /.blurb -->
