@@ -7,10 +7,8 @@ title: Phase Genomics Software & Bioinformatics Documentation
 	<p>Phase Genomics official software & bioinformatics documentation</p>
 	
 	<h1>Documentation</h1>
-	<ul class="posts">
 	{% for post in site.posts %}
 		<h2><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
 		<p class="tight-top">{{ post.description }}</p>
 	{% endfor %}
-	</ul>
 </div><!-- /.blurb -->
