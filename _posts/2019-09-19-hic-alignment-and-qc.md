@@ -12,7 +12,8 @@ We recommend the following steps for alignment and QC of our data. It's the meth
 1   Alignment
 ---------------------
 ### Short Answer
-1. Align your Hi-C data with `bwa mem -5SP [assembly.fasta] [fwd_hic.fastq] [rev_hic.fastq] | samtools view -S -h -b -F 2316 > [aligned.bam]`
+Align your Hi-C data with:
+> `bwa mem -5SP [assembly.fasta] [fwd_hic.fastq] [rev_hic.fastq] | samtools view -S -h -b -F 2316 > [aligned.bam]`
 
 ### More Details
 Alignment of Hi-C data typically requires the use of an aligner that has been modified for Hi-C data. This is because Hi-C data intentionally contains paired reads which can come from very far away, or even between chromosomes, following a very different statistical distribution from things like shotgun or mate pair libraries. To our knowledge, only [bwa](http://bio-bwa.sourceforge.net) and [minimap2](https://github.com/lh3/minimap2) have such modifications (please [let us know](mailto:support@phasegenomics.com) if we're wrong!). Also, Heng Li's [hickit](https://github.com/lh3/hickit) has some useful information about aligning Hi-C reads, and may have some helpful examples.
@@ -22,7 +23,9 @@ We use `bwa mem` to align Hi-C data, with the `-5`, `-S`, and `-P` options. Thes
 2   QC
 ---------------------
 ### Short Answer
-1. After aligning, run our QC tool [bam_to_mate_hist.py](https://github.com/phasegenomics/bam_to_mate_hist) with `bam_to_mate_hist.py -b [aligned.bam] -r -o [output_file_prefix]`. The report it generates includes a sequencing recommendation; [contact us](mailto:support@phasegenomics.com) if you don't get a "Pass" and be sure to attach your report.
+After aligning, run our QC tool [bam_to_mate_hist.py](https://github.com/phasegenomics/bam_to_mate_hist) with: 
+> `bam_to_mate_hist.py -b [aligned.bam] -r -o [output_file_prefix]`
+The report it generates includes a sequencing recommendation; [contact us](mailto:support@phasegenomics.com) if you don't get a "Pass" and be sure to attach your report.
 
 ### More Details
 The best way to know if a Hi-C library worked is to look at how much long-range signal is in it. There are also several metrics which correlate with a suspicious library, such as a low number of PCR duplicates or a large number of reads which align to the same position in the genome (this happens when there are very short fragments in the library due for example to two restriction sites being very close together). Our QC script measures these quantities and makes a recommendation about the library based on the result.
@@ -35,7 +38,9 @@ The best way to know if a Hi-C library worked is to look at how much long-range 
 3   Optional: Filtering Alignments
 ---------------------
 ### Short Answer
-1. If you want to filter your Hi-C data (usually not necessary), use our tool [Matlock](https://github.com/phasegenomics/matlock) with `matlock bamfilt -i [aligned.bam] -o [aligned_filtered.bam`. Feel free to experiment with filtering options, but we recommend starting with the defaults.
+If you want to filter your Hi-C data (usually not necessary), use our tool [Matlock](https://github.com/phasegenomics/matlock) with:
+>`matlock bamfilt -i [aligned.bam] -o [aligned_filtered.bam`
+Feel free to experiment with filtering options, but we recommend starting with the defaults.
 
 ### More Details
 If your QC wasn't great, you've tried analyzing your data and are being hindered by repeats, or you just feel like there's too much noise in the data, filtering the alignments with Matlock can help. Matlock offers a set of several different kids of filters used for different kinds of situations. Getting familiar with when to use which filter is in part learning how to work effectively with Hi-C data, but the filters are fairly straightforward.
