@@ -31,30 +31,45 @@ __Long read assemblies are strongly encouraged__, as they lead to extremely cont
 
 __Short read assemblies are not encouraged but can be "good enough" for simple genomes with low repeat content__. Short read assemblies tend to collapse repetitive sequences and yield low contiguity assemblies with large numbers of contigs. These assemblies are difficult to scaffold due to their high complexity.
 
-__Mate pair assemblies perform poorly__. While we are still accepting mate pair assemblies at the time of writing, they are quite difficult to work with. Mate pair scaffolding joins short-read contigs together with long-range inserts. Unfortunately, this process is error-prone and leads to many misjoins, leading to extensive chimerism in the resulting scaffolds. Hi-C performs badly when there are high levels of chimerism in the starting assembly.
+__Mate pair assemblies perform poorly__. While we are still accepting mate pair assemblies at the time of writing, they are quite difficult to work with. Mate pair scaffolding joins short-read contigs together with long-range inserts. Unfortunately, this process is error-prone and leads to many misjoins, leading to extensive chimerism in the resulting scaffolds. Hi-C performs badly when there are high levels of chimerism in the starting assembly (see below).
 
 ### Assembly software
 
+Recommended long-read assemblers:
+
+* Canu
+* Falcon / Falcon-Unzip
+* to be continued...
+
 2    Other complementary data types
 ---------------------
-If available and within your budget, we strongly recommend using complementary data types to correct or improve your assembly:
+If available or within your budget, we strongly recommend using complementary data types to correct or improve your assembly:
 
 * Genetic maps
 * BioNano optical maps
  
+Genetic maps contain linkage information about specific markers on specific contigs. Genetic maps can be directly used in Proximo scaffolding to constrain placement of contigs in chromosomes.
 
+Optical mapping can be used to correct errors in the assembly and to perform initial scaffolding.
 
 3    Common problems in assemblies
 ---------------------
 ### Low contiguity
+Low contiguity assemblies tend to have very large numbers of contigs. This greatly increases the complexity of the scaffolding problem, and the opportunities to make mistakes. 
 
-### Chimeric contigs
+### Chimeric contigs/scaffolds
+Erroneously joined sequences in the starting assembly create problems in scaffolding, as different pieces of the same contig or scaffold provide refractory signals. Therefore, this fraction should be as low as possible. Trace levels of 
+
+*** insert chimera image
 
 ### Heterozygosity
+
+*** insert haplotig image
 
 4     Fixing problems in assemblies
 ---------------------
 
 ### Break contigs --> fixes chimeric contigs
 
-### 
+### Manual polishing
+
