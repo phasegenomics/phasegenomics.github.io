@@ -56,14 +56,14 @@ One note about how matlock works: its filters are used to mark which read pairs 
 * __`-x`__: mark alignments where the target is a member of a comma-separated list of SEQIDs for filtering out. This is used to remove all Hi-C data for a particular set of contigs/SEQIDs from the BAM. Default: none
 * __`-y`__: invert the behavior for contigs specified with -x, only including alignments involving those contigs/SEQIDs instead of excluding. Default: exclude
 * __`-f`__: binary flag filter controlling the reasons a read pair should be excluded
-* * SAME_SEQID  =  2
-* * LOW_MAPQ    =  4
-* * XA_SA       =  8
-* * NM          = 16
-* * SMALLCONTIG = 32
-* * EXCLUDE     = 64
-* * SA_ONLY     = 128
-* * Default: 20 =  LOW_MAPQ | NM 
+   * SAME_SEQID  =  2
+   * LOW_MAPQ    =  4
+   * XA_SA       =  8
+   * NM          = 16
+   * SMALLCONTIG = 32
+   * EXCLUDE     = 64
+   * SA_ONLY     = 128
+   * Default: 20 =  LOW_MAPQ | NM 
 
 Unless your library was questionable and you are attempting to rescue it, we don’t recommend using Matlock until you look at the unfiltered results, however, as for most genomes filtering beyond the above samtools filter is unnecessary. You may use bam_to_mate_hist.py to QC your filtered library as well.
 
