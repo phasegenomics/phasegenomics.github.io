@@ -41,7 +41,7 @@ The best way to know if a Hi-C library worked is to look at how much long-range 
 ---------------------
 ### Short Answer
 If you want to filter your Hi-C data (usually not necessary), use our tool [Matlock](https://github.com/phasegenomics/matlock) with:
->`matlock bamfilt -i [aligned.bam] -o [aligned_filtered.bam`
+>`matlock bamfilt -i [aligned.bam] -o [aligned_filtered.bam]`
 
 Feel free to experiment with filtering options, but we recommend starting with the defaults.
 
