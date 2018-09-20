@@ -46,9 +46,10 @@ p, li {
     color: #466880;
     font-family: 'Montserrat', sans-serif;
 }
+
 li {
-	margin-top: 5px
-	margin-bottom: 5px
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 code {
     font-size: 1.2em;
