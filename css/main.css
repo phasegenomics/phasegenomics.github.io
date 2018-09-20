@@ -14,7 +14,7 @@ nav ul li, footer ul li {
 }
 a {
     text-decoration: none;
-    color: #ff7200;
+    color: #faa546;
 }
 a:hover {
     text-decoration: underline;
@@ -42,7 +42,7 @@ h3 {
 
 p, li {
     font-size: 1em;
-    line-height: 1.4em
+    line-height: 1.4em;
     color: #466880;
     font-family: 'Montserrat', sans-serif;
 }
