@@ -4,7 +4,7 @@ body {
 }
 nav ul, footer ul {
 	font-family: 'Montserrat', sans-serif;
-    padding-bottom: 1000px;
+    padding: 0px;
     list-style: none;
     font-weight: bold;
 }
@@ -59,6 +59,7 @@ code {
 footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
+	padding-bottom: 0px;
 }
 
 ul.posts li {
