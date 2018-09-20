@@ -58,3 +58,7 @@ footer {
 ul.posts li {
     list-style: none;
 }
+
+.tight-top {
+	margin-top: 0px;
+}
