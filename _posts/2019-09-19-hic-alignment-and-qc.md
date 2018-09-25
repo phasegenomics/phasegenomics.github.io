@@ -65,5 +65,5 @@ One note about how matlock works: its filters are used to mark which read pairs 
    * SA_ONLY     = 128
    * Default: 20 =  LOW_MAPQ | NM 
 
-Unless your library was questionable and you are attempting to rescue it, we don’t recommend using Matlock until you look at the unfiltered results, however, as for most genomes filtering beyond the above samtools filter is unnecessary. You may use bam_to_mate_hist.py to QC your filtered library as well.
+Unless your library was questionable and you are attempting to rescue it, we don’t recommend using Matlock until you look at the unfiltered results because for most genomes filtering beyond the above samtools filter is unnecessary. You may use bam_to_mate_hist.py to QC your filtered library as well.
 
