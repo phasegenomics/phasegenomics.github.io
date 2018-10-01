@@ -47,10 +47,11 @@ If available or within your budget, we strongly recommend using complementary da
 
 * Genetic maps
 * BioNano optical maps
+* 10X (linked-reads)
  
 Genetic maps contain linkage information between contigs, based on the co-segregation of specific markers on those contigs. Genetic maps can be directly used in Proximo scaffolding to constrain placement of contigs in chromosomes.
 
-Optical mapping can be used to correct errors in the assembly and to perform initial scaffolding.
+Optical mapping or linked-reads can be used to correct errors in the assembly and to perform initial scaffolding.
 
 3    Common problems in assemblies
 ---------------------
@@ -102,4 +103,6 @@ If you have aligned Hi-C data, you can use Juicebox or a similar tool to manuall
 We will frequently perform manual fixes of an assembly using the Juicebox tool for visualizing Hi-C data aligned to an assembly. This visualizer and interactive assembly editor is a great way to fix the last 1% of problems that benefit from human eyes after Proximo has done 99% of the work. You can move contigs, invert contigs, and break contigs in this tool. Remaking an assembly FASTA from Juicebox fixes is a little hard and not automatic, but we are working on tools that allow us to do this. 
 
 ### Remove homologous sequences
+There are various tools to remove haplotigs, e.g. [purge-haplotigs](https://www.biorxiv.org/content/early/2018/03/22/286252). 
 
+### to be continued...
