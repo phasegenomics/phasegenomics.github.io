@@ -5,7 +5,9 @@ date: 2018-09-20
 description: "Hi-C is a great tool for genome scaffolding, but its success depends crucially on the starting assembly. It is therefore important to ensure that your starting assembly is of sufficient quality for the scaffolding task. Our guidelines will help you make good decisions about what technologies to use and how to understand and improve scaffolding results."
 ---
 
-Hi-C is a great tool for genome scaffolding, but its success depends crucially on the starting assembly. It is therefore important to ensure that your starting assembly is of sufficient quality for the scaffolding task.
+Hi-C is a great tool for genome scaffolding, but its success depends crucially on the starting assembly. It is therefore important to ensure that your starting assembly is of sufficient quality for the scaffolding task. 
+
+These recommendations cover the most common case of using Hi-C to scaffold a haploid genome assembly. If you plan to attempt diploid or polyploid Hi-C scaffolding, that is frequently possible. If you want a diploid or polyploid assembly please email support@phasegenomics.com to learn more about our recommendations.
 
 
 1    Assembly technologies
