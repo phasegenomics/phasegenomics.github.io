@@ -10,10 +10,10 @@ Hi-C is a great tool for genome scaffolding, but its success depends crucially o
 
 1    Assembly technologies
 ---------------------
-### Recommendations on sequencing technology
+### Recommendations on sequencing technology for initial (contig-level) assembly
 The following molecular technologies are __strongly encouraged__ for generating starting contigs or scaffolds:
 
-* PacBio long reads (ideally >80X coverage; minimum 30X)
+* PacBio long reads (ideally >70X coverage; minimum 30X)
 * Nanopore long reads
 
 The following sequencing technologies are __acceptable in some cases__ for generating starting contigs or scaffolds:
@@ -27,11 +27,13 @@ The following sequencing technologies are __discouraged__ for generating startin
 * Mate-pair sequencing
 
 ### Why these technologies?
-__Long read assemblies are strongly encouraged__, as they lead to extremely contiguous assemblies due to their ability to completely read through long repetitive sequences. Their relatively low accuracy and high frequency of small indels makes it desirable to perform polishing and error correction for finished genomes, but Hi-C scaffolding works well even with unpolished contigs. 
+__Long read assemblies are strongly encouraged__, as they lead to extremely contiguous assemblies due to their ability to completely read through long repetitive sequences. Their relatively low accuracy and high frequency of small indels makes it desirable to perform polishing and error correction for finished genomes, but Hi-C scaffolding frequently works well even with unpolished contigs. 
 
-__Short read / 10X assemblies are can be "good enough" for genomes with low repeat content__. Short read assemblies tend to collapse repetitive sequences and yield low contiguity assemblies with large numbers of contigs. These assemblies are difficult to scaffold due to their high complexity. 10X scaffolds can be ok, but __other scaffolds made from short reads__ are generally chimeric.
+We recommend long-read technologies for any genome with non-trivial repeat content.
 
-__Mate pair assemblies perform poorly__. While we are still accepting mate pair assemblies at the time of writing, they are quite difficult to work with. Mate pair scaffolding joins short-read contigs together with long-range inserts. Unfortunately, this process is error-prone and leads to frequent misjoins, leading to extensive chimerism in the resulting scaffolds. Hi-C performs badly when there are high levels of chimerism in the starting assembly (see below). If we are given an assembly scaffolded with mate-pairs, we tend to simply break it back into contigs and try to treat it as a short-read assembly.
+__Short read / 10X-based assemblies can be "good enough" for genomes with low repeat content__. Short read assemblies tend to collapse repetitive sequences and yield low contiguity assemblies with large numbers of contigs. These assemblies don't always give good results due to their high complexity. 10X scaffolds can be ok, but __other scaffolds made from short reads__ generally contain unacceptable levels of chimerism.
+
+__Mate pair assemblies perform poorly__. While we are still accepting mate pair assemblies at the time of writing, they usually do not yield good results. Mate pair scaffolding joins short-read contigs together with long-range inserts. Unfortunately, this process is error-prone and leads to frequent misjoins, leading to extensive chimerism in the resulting scaffolds. Hi-C performs badly when there are high levels of chimerism in the starting assembly (see below). If we are given an assembly scaffolded with mate-pairs, we tend to simply break it back into contigs and try to treat it as a short-read contig assembly.
 
 ### Assembly software
 
@@ -53,6 +55,8 @@ Genetic maps contain linkage information between contigs, based on the co-segreg
 
 Optical mapping or linked-reads can be used to correct errors in the assembly and to perform initial scaffolding.
 
+The best final results of Hi-C scaffolding tend to be obtained when an assembly has been previously improved using complementary technologies (_e.g._ PacBio + optical mapping or PacBio + genetic maps). This is particularly true for complex genomes with high repeat content.
+
 3    Common problems in assemblies
 ---------------------
 
@@ -72,14 +76,14 @@ Erroneously joined sequences in the starting assembly create problems in scaffol
 
 Very low levels of chimerism can be accommodated and corrected using Hi-C data. As an example of chimerism in a Hi-C contact map see Figure 1, in which three large chimeric contigs are in the selection (black boxes represent selected contigs). Chimeric contigs contain distinct "squares" of contacts that in turn do not interact with each other.
 
-![three large chimeric contigs selected](https://github.com/phasegenomics/phasegenomics.github.io/blob/assembly_reqs/images/chimeric_contigs.png)
+![three large chimeric contigs selected](https://github.com/phasegenomics/phasegenomics.github.io/blob/master/images/chimeric_contigs.png)
 
 ### Heterozygosity
 If there is heterozygosity in the starting assembly, this will lead to additional sequences being present that are homologous to some other sequence in the assembly. This can be ok if this is intentional (_e.g._ it is a diploid assembly or contains homeologs), but if the assembly is intended to be a single haploid sequence it will not represent linear sequence well and may contain spurious repeats. In each of these cases, Hi-C reads will be relatively difficult to map uniquely and therefore the signal useable for scaffolding will be weaker overall than for a haploid assembly. 
 
 For an example of what homologous sequences look like on a Hi-C contact map, see Figure 2. This example shows how complex the situation can get in a repeat-rich genome, in that the homology is observed both within and between contigs.
 
-![homology within and between contigs](https://github.com/phasegenomics/phasegenomics.github.io/blob/assembly_reqs/images/homologous_contigs.png)
+![homology within and between contigs](https://github.com/phasegenomics/phasegenomics.github.io/blob/master/images/homologous_contigs.png)
 Figure 2.
 
 
