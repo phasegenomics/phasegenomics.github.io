@@ -16,20 +16,20 @@ The following molecular technologies are __strongly encouraged__ for generating 
 * PacBio long reads (ideally >80X coverage; minimum 30X)
 * Nanopore long reads
 
-The following sequencing technologies are __not encouraged__ for generating starting contigs or scaffolds:
+The following sequencing technologies are __acceptable in some cases__ for generating starting contigs or scaffolds:
 
 * 10X chromium / linked-read sequencing
 * Sanger / dideoxy sequencing (high coverage)
 * Illumina short reads (very high coverage)
 
-The following sequencing technologies are __strongly discouraged__ for generating starting contigs or scaffolds:
+The following sequencing technologies are __discouraged__ for generating starting contigs or scaffolds:
 
 * Mate-pair sequencing
 
 ### Why these technologies?
 __Long read assemblies are strongly encouraged__, as they lead to extremely contiguous assemblies due to their ability to completely read through long repetitive sequences. Their relatively low accuracy and high frequency of small indels makes it desirable to perform polishing and error correction for finished genomes, but Hi-C scaffolding works well even with unpolished contigs. 
 
-__Short read assemblies are not encouraged but can be "good enough" for simple genomes with low repeat content__. Short read assemblies tend to collapse repetitive sequences and yield low contiguity assemblies with large numbers of contigs. These assemblies are difficult to scaffold due to their high complexity.
+__Short read / 10X assemblies are can be "good enough" for genomes with low repeat content__. Short read assemblies tend to collapse repetitive sequences and yield low contiguity assemblies with large numbers of contigs. These assemblies are difficult to scaffold due to their high complexity. 10X scaffolds can be ok, but __other scaffolds made from short reads__ are generally chimeric.
 
 __Mate pair assemblies perform poorly__. While we are still accepting mate pair assemblies at the time of writing, they are quite difficult to work with. Mate pair scaffolding joins short-read contigs together with long-range inserts. Unfortunately, this process is error-prone and leads to frequent misjoins, leading to extensive chimerism in the resulting scaffolds. Hi-C performs badly when there are high levels of chimerism in the starting assembly (see below). If we are given an assembly scaffolded with mate-pairs, we tend to simply break it back into contigs and try to treat it as a short-read assembly.
 
