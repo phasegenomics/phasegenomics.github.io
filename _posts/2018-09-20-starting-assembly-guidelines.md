@@ -85,7 +85,7 @@ If there is heterozygosity in the starting assembly, this will lead to additiona
 
 For an example of what homologous sequences look like on a Hi-C contact map, see Figure 2. This example shows how complex the situation can get in a repeat-rich genome, in that the homology is observed both within and between contigs.
 
-![homology within and between contigs](https://phasegenomics.github.io/images/chimeric_contigs.png)
+![homology within and between contigs](https://phasegenomics.github.io/images/homologous_contigs.png)
 Figure 2.
 
 
