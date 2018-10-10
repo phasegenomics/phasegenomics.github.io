@@ -16,10 +16,15 @@ We recommend the following steps for alignment and QC of our data. It's the meth
 Align your Hi-C data with:
 > `bwa mem -5SP [assembly.fasta] [fwd_hic.fastq] [rev_hic.fastq] | samtools view -S -h -b -F 2316 > [aligned.bam]`
 
+If you would like to use `samblaster` to flag PCR duplicates (we do), you can insert it into the pipeline like this:
+> `bwa mem -5SP [assembly.fasta] [fwd_hic.fastq] [rev_hic.fastq] | samblaster | samtools view -S -h -b -F 2316 > [aligned.bam]`
+
 ### More Details
 Alignment of Hi-C data typically requires the use of an aligner that has been modified for Hi-C data. This is because Hi-C data intentionally contains paired reads which can come from very far away, or even between chromosomes, following a very different statistical distribution from things like shotgun or mate pair libraries. To our knowledge, only [bwa](http://bio-bwa.sourceforge.net) and [minimap2](https://github.com/lh3/minimap2) have such modifications (please [let us know](mailto:support@phasegenomics.com) if we're wrong!). Also, Heng Li's [hickit](https://github.com/lh3/hickit) has some useful information about aligning Hi-C reads, and may have some helpful examples.
 
 We use `bwa mem` to align Hi-C data, with the `-5`, `-S`, and `-P` options. These options aren't documented that well in the online bwa documentation, but they are documented in the usage of `bwa mem`. `-5` is sometimes called "the Hi-C option" as it was designed to help the aligner handle the statistical properties of Hi-C libraries better, mainly by reducing the amount of secondary and alternate mappings the aligner makes as those cause Hi-C data to become ambiguous. The `-S` and `-P` options cause the aligner not to try to use assumptions about the reads that might be true for shotgun or mate pair libraries in an effort to rescue more reads. In fact, using these options to avoid those rescue efforts usually results in more of the Hi-C data having a useful alignment!
+
+Lastly, it is usually helpful to flag PCR duplicates, both as part of QC (the report below will count these up for you) and so you can remove them later if desired. We use [samblaster](https://github.com/GregoryFaust/samblaster) because it is effective and easy to use. However, there are several tools which can flag PCR duplicates ([Picard](https://broadinstitute.github.io/picard/) has a popular capability to flag PCR duplicates) if you so choose on the aligned BAM file produced during this step.
 
 2   QC
 ---------------------
