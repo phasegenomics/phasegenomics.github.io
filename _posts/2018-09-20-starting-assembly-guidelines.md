@@ -80,13 +80,16 @@ Very low levels of chimerism can be accommodated and corrected using Hi-C data. 
 
 ![three large chimeric contigs selected](https://phasegenomics.github.io/images/chimeric_contigs.png)
 
+__Figure 1.__ Three large chimeric contigs selected.
+
 ### Heterozygosity
 If there is heterozygosity in the starting assembly, this will lead to additional sequences being present that are homologous to some other sequence in the assembly. This can be ok if this is intentional (_e.g._ it is a diploid assembly or contains homeologs), but if the assembly is intended to be a single haploid sequence it will not represent linear sequence well and may contain spurious repeats. In each of these cases, Hi-C reads will be relatively difficult to map uniquely and therefore the signal useable for scaffolding will be weaker overall than for a haploid assembly. 
 
 For an example of what homologous sequences look like on a Hi-C contact map, see Figure 2. This example shows how complex the situation can get in a repeat-rich genome, in that the homology is observed both within and between contigs.
 
 ![homology within and between contigs](https://phasegenomics.github.io/images/homologous_contigs.png)
-Figure 2.
+
+__Figure 2.__ Homology within and between contigs.
 
 
 4     Fixing problems in assemblies
