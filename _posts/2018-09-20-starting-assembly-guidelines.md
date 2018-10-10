@@ -78,7 +78,7 @@ Erroneously joined sequences in the starting assembly create problems in scaffol
 
 Very low levels of chimerism can be accommodated and corrected using Hi-C data. As an example of chimerism in a Hi-C contact map see Figure 1, in which three large chimeric contigs are in the selection (black boxes represent selected contigs). Chimeric contigs contain distinct "squares" of contacts that in turn do not interact with each other.
 
-![three large chimeric contigs selected](https://github.com/phasegenomics/phasegenomics.github.io/blob/master/images/chimeric_contigs.png)
+![three large chimeric contigs selected](https://phasegenomics.github.io/images/chimeric_contigs.png)
 
 ### Heterozygosity
 If there is heterozygosity in the starting assembly, this will lead to additional sequences being present that are homologous to some other sequence in the assembly. This can be ok if this is intentional (_e.g._ it is a diploid assembly or contains homeologs), but if the assembly is intended to be a single haploid sequence it will not represent linear sequence well and may contain spurious repeats. In each of these cases, Hi-C reads will be relatively difficult to map uniquely and therefore the signal useable for scaffolding will be weaker overall than for a haploid assembly. 
