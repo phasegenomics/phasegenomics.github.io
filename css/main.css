@@ -50,7 +50,8 @@ h5 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1em;
     color: #c46619;
-    font-style: oblique;	
+    text-decoration: underline;
+    margin-bottom: 0;
 }
 
 p, li {
