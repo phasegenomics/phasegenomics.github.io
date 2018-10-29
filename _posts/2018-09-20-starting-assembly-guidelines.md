@@ -7,7 +7,7 @@ description: "Hi-C is a great tool for genome scaffolding, but its success depen
 
 Hi-C is a great tool for genome scaffolding, but its success depends crucially on the starting assembly. It is therefore important to ensure that your starting assembly is of sufficient quality for the scaffolding task. 
 
-These recommendations cover the most common case of using Hi-C to scaffold a haploid genome assembly. If you plan to attempt diploid or polyploid Hi-C scaffolding, that is frequently possible. If you want a diploid or polyploid assembly please email support@phasegenomics.com to learn more about our recommendations.
+These recommendations cover the most common case of using Hi-C to scaffold a haploid genome assembly. Diploid or polyploid Hi-C scaffolding is possible but more complex. If you want a diploid or polyploid assembly please email support@phasegenomics.com to learn more about our recommendations.
 
 
 1    Assembly technologies
@@ -16,7 +16,7 @@ These recommendations cover the most common case of using Hi-C to scaffold a hap
 The following molecular technologies are __strongly encouraged__ for generating starting contigs or scaffolds:
 
 * PacBio long reads (ideally >70X coverage; minimum 30X)
-* Nanopore long reads
+* Nanopore long reads (minimum 50X; __recommend error correction__, less well investigated than PacBio)
 
 The following sequencing technologies are __acceptable in some cases__ for generating starting contigs or scaffolds:
 
@@ -42,7 +42,7 @@ __Mate pair assemblies perform poorly__. While we are still accepting mate pair 
 Recommended long-read assemblers:
 
 * Canu
-* Falcon / Falcon-Unzip
+* Falcon / Falcon-Unzip (see [PacBio resources](https://github.com/PacificBiosciences/pb-assembly) for more information)
 * to be continued...
 
 2    Useful complementary data types
@@ -65,7 +65,7 @@ The best final results of Hi-C scaffolding tend to be obtained when an assembly 
 ### Low contiguity
 Low contiguity assemblies tend to have very large numbers of contigs. This greatly increases the complexity of the scaffolding problem, and the opportunities to make mistakes. The best way to avoid the problem of low contiguity is to use high-quality starting data (PacBio reads) at high coverage.
 
-Contiguity is normally measured using N50, which is a statistic summarizing the size distribution of sequences. Briefly, the N50 of an assembly is the length of the sequence in the assembly for which at least half of the total sequence length of the assembly is in sequences at least as large as this one. 
+Contiguity is normally measured using N50, which is a statistic summarizing the size distribution of sequences. N50 is the minimum length of the set of the longest contigs that contain half the genome. 
 
 All else being equal, you want your N50 to be as large as possible. The N50 of the assembly will howerver depend a lot on the genome size and chromosome sizes of the species. For example, we like having N50 > 1Mbp for large genome assemblies, but N50 = 1Mbp would be very suspicious for a brewer's yeast (_Saccharomyces cerevisiae_) assembly, as most of the chromosomes of this organism are <1Mbp in length and the total genome size is only 12Mbp. 
 
@@ -97,7 +97,6 @@ __Figure 2.__ Homology within and between contigs.
 We have various options for trying to fix up an assembly with the above issues.
 
 ### Break contigs --> fixes chimeric contigs
-There are a few ways to break starting contigs/scaffolds: 
 
 ##### Split on gaps
 One is to simply split every sequence on gaps in the assembly, where a gap is defined as a stretch of Ns of at least some length (2 or 10 usually). 
