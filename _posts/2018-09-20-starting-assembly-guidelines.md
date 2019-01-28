@@ -105,10 +105,10 @@ One is to simply split every sequence on gaps in the assembly, where a gap is de
 If you are using PacBio or Nanopore reads, another method is to use our tool [polar_star](https://github.com/phasegenomics/polar_star). This tool takes your PacBio subreads (or in principle ONT reads), aligns them to your assembly, and breaks the assembly in places where long read coverage fluctuates.
 
 ##### Manual contig breaking
-If you have aligned Hi-C data, you can use [Juicebox] (https://github.com/aidenlab/Juicebox/wiki) or a similar tool to manually break contigs and make a new assembly.
+If you have aligned Hi-C data, you can use [Juicebox](https://github.com/aidenlab/Juicebox/wiki) or a similar tool to manually break contigs and make a new assembly.
 
 ### Manual polishing
-We will frequently perform manual fixes of an assembly using the [Juicebox Assembly Tool] (https://github.com/aidenlab/Juicebox/wiki) ([paper] (https://www.biorxiv.org/content/10.1101/254797v1)) for visualizing Hi-C data aligned to an assembly. This visualizer and interactive assembly editor is a great way to fix the last 1% of problems that benefit from human eyes after Proximo has done 99% of the work. You can move contigs, invert contigs, and break contigs in this tool. Remaking an assembly FASTA from Juicebox fixes is a little hard and not automatic, but we are working on tools that allow us to do this. 
+We will frequently perform manual fixes of an assembly using the [Juicebox Assembly Tool](https://github.com/aidenlab/Juicebox/wiki) ([paper](https://www.biorxiv.org/content/10.1101/254797v1)) for visualizing Hi-C data aligned to an assembly. This visualizer and interactive assembly editor is a great way to fix the last 1% of problems that benefit from human eyes after Proximo has done 99% of the work. You can move contigs, invert contigs, and break contigs in this tool. Remaking an assembly FASTA from Juicebox fixes is a little hard and not automatic, but we are working on tools that allow us to do this. 
 
 ### Remove homologous sequences
 There are various tools to remove haplotigs, e.g. [purge-haplotigs](https://www.biorxiv.org/content/early/2018/03/22/286252). 
