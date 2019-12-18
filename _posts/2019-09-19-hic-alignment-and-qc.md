@@ -29,8 +29,8 @@ Lastly, it is usually helpful to flag PCR duplicates, both as part of QC (the re
 2   QC
 ---------------------
 ### Short Answer
-After aligning, run our QC tool [bam_to_mate_hist.py](https://github.com/phasegenomics/bam_to_mate_hist) with: 
-> `bam_to_mate_hist.py -b [aligned.bam] -r -o [output_file_prefix]`
+After aligning, run our QC tool [hic_qc.py](https://github.com/phasegenomics/hic_qc) with: 
+> `hic_qc.py -b [aligned.bam] -r -o [output_file_prefix]`
 
 The report it generates includes a sequencing recommendation; [contact us](mailto:support@phasegenomics.com) if you don't get a "Pass" and be sure to attach your report.
 
