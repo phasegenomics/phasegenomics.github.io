@@ -25,27 +25,31 @@ To begin using the Phase Genomics platform, you need to create an account. To do
 
 <center>
 <img alt="creating an account" src="https://phasegenomics.github.io/images/create_account.jpg" width="80%">
+</center>
 
 __Figure 1.1__ Creating an account on the Phase Genomics platform.
-</center>
 
 This will take you to the Account Registration page, where you can enter the information for your account [A]. Note that the "Organization Code" field is optional. Organization Codes are 6-digit alphanumeric codes. If you have been given an Organization Code by someone else in your organization (your lab, team, company, etc.), entering the Organization Code here will automatically request your account to join that Organization when it is created. You can always join an Organization later if you don't have a code when you create your account. Once you have entered all your account info, click the Register button [B] to submit your information.
 
 <center>
 <img alt="account registration page" src="https://phasegenomics.github.io/images/enter_account_info.jpg" width="80%">
+</center>
 
 __Figure 1.2__ Entering account information on the Account Registration page.
-</center>
 
 Our Terms of Service will appear after you click the Register button. Please read these terms and click "Accept" to accept the terms, or "Decline" to refuse them. To accept the terms, you must read and scroll all the way to the bottom of the terms. If you click Decline, you will be taken back to the Account Registration page. Note that acceptance of the Terms of Service is required to be able to upload data to the Phase Genomics platform and to be able to utilize the bioinformatics capabilities of the platform.
 
-![tos screen](https://phasegenomics.github.io/images/tos_screen.jpg)
+<center>
+<img alt="tos screen" src="https://phasegenomics.github.io/images/tos_screen.jpg" width="80%">
+</center>
 
 __Figure 1.3__ The Terms of Service screen.
 
 If you accept the Terms of Service, you will be sent a confirmation email to verify your email address and be taken to a page confirming we have received your information. If you do not receive this email, check your Spam folder. If you still cannot find it, contact us at [support@phasegenomics.com](support@phasegenomics.com) for help.
 
-![email verification](https://phasegenomics.github.io/images/email_confirmation.jpg)
+<center>
+<img alt="email verification" src="https://phasegenomics.github.io/images/email_confirmation.jpg" width="80%">
+</center>
 
 __Figure 1.4__ The Email Address Verification screen.
 
@@ -59,13 +63,17 @@ You may upload files to your account at any time, and access them later for anal
 
 To upload a file, log into your account and click the "Upload Files" link [A] in the left navigation of the page.
 
-![upload files link](https://phasegenomics.github.io/images/upload_files_nav.jpg)
+<center>
+<img alt="upload files link" src="https://phasegenomics.github.io/images/upload_files_nav.jpg" width="80%">
+</center>
 
 __Figure 2.1__ Navigating to the Upload Files link.
 
 This will open a popup dialog for you to enter upload information for one or more files.
 
-![upload files dialog](https://phasegenomics.github.io/images/upload_files_popup.jpg)
+<center>
+<img alt="upload files dialog" src="https://phasegenomics.github.io/images/upload_files_popup.jpg" width="80%">
+</center>
 
 __Figure 2.2__ The Upload Files dialog.
 
@@ -75,7 +83,9 @@ You may also upload files in batch using the Add More Files button [E]. A simila
 
 Once files begin uploading, the dialog will be updated with a progress bar indicating how much of the file has successfully been uploaded.
 
-![files uploading](https://phasegenomics.github.io/images/uploading_files.jpg)
+<center>
+<img alt="files uploading" src="https://phasegenomics.github.io/images/uploading_files.jpg" width="80%">
+</center>
 
 __Figure 2.3__ The Upload Files dialog, showing progress uploading a file.
 
@@ -83,7 +93,9 @@ Because of the size of genomics data, uploads may take several minutes or even h
 
 Once your upload is complete, the File Upload dialog will disappear, and you should see the file in the My Files portion of the platform.
 
-![files uploaded](https://phasegenomics.github.io/images/files_uploaded.jpg)
+<center>
+<img alt="files uploaded" src="https://phasegenomics.github.io/images/files_uploaded.jpg" width="80%">
+</center>
 
 __Figure 2.4__ Files that have completed uploading appear on your account in the My Files page.
 
@@ -93,13 +105,17 @@ __Figure 2.4__ Files that have completed uploading appear on your account in the
 ---------------------
 To initiate a ProxiMeta analysis on the platform, log into your account and click on the "New Sample" link [A] in the left nav, under the ProxiMeta section.
 
-![new proximeta sample nav](https://phasegenomics.github.io/images/new_proximeta_sample_nav.jpg)
+<center>
+<img alt="new proximeta sample nav" src="https://phasegenomics.github.io/images/new_proximeta_sample_nav.jpg" width="80%">
+</center>
 
 __Figure 3.1__ Begin a new ProxiMeta sample analysis by clicking the New Sample link under the ProxiMeta section of the left navigation pane.
 
 Clicking the New Sample link opens a dialog to begin the Sample creation process in the platform. 
 
-![new proximeta sample dialog 1](https://phasegenomics.github.io/images/new_proximeta_sample_1.jpg)
+<center>
+<img alt="new proximeta sample dialog 1" src="https://phasegenomics.github.io/images/new_proximeta_sample_1.jpg" width="80%">
+</center>
 
 __Figure 3.2__ The first Sample creation dialog for ProxiMeta.
 
@@ -109,13 +125,17 @@ Indicate whether you are uploading a FASTA you have already assembled ("Assemble
 
 Clicking Next opens the next dialog for Sample Creation, in which you indicate which files you wish to use for the sample. If you selected to use "Assembled contigs" and upload contigs you have already assembled, that dialog looks like this:
 
-![new proximeta sample dialog 2, for assembled contigs](https://phasegenomics.github.io/images/new_proximeta_sample_2a.jpg)
+<center>
+<img alt="new proximeta sample dialog 2, for assembled contigs" src="https://phasegenomics.github.io/images/new_proximeta_sample_2a.jpg" width="80%">
+</center>
 
 __Figure 3.3__ The second Sample creation dialog for ProxiMeta, when using previously assembled contigs.
 
 If you instead selected to use "Reads to assemble" and have ProxiMeta perform _de novo_ contig assembly (using [MEGAHIT](https://github.com/voutcn/megahit)), that dialog instead looks like this:
 
-![new proximeta sample dialog 2, for reads to assemble](https://phasegenomics.github.io/images/new_proximeta_sample_2b.jpg)
+<center>
+<img alt="new proximeta sample dialog 2, for reads to assemble" src="https://phasegenomics.github.io/images/new_proximeta_sample_2b.jpg" width="80%">
+</center>
 
 __Figure 3.4__ The second Sample creation dialog for ProxiMeta, when using reads to assemble.
 
@@ -127,19 +147,25 @@ For every file you want to use for a sample, you have the option to "Upload a Ne
 
 If you wish to upload a new file to the platform, select "Upload a New File" and either type (or paste) the full path to that file into the "Filename" box [A], or click the blue File Browser button [B] to open a browser and navigate to the file.
 
-![upload new file](https://phasegenomics.github.io/images/upload_new_file.jpg)
+<center>
+<img alt="upload new file" src="https://phasegenomics.github.io/images/upload_new_file.jpg" width="80%">
+</center>
 
 __Figure 3.5__ Choosing to Upload a New File during Sample Creation.
 
 If you wish to use a file you have already uploaded to the platform, select "Use Existing File" and the "Filename" box [A] will turn into a dropdown showing all files you have uploaded to the platform previously which are of the appropriate type, e.g., only Hi-C forward reads files are shown in the Hi-C Forward Reads File Upload Box.
 
-![use existing file](https://phasegenomics.github.io/images/use_existing_file.jpg)
+<center>
+<img alt="use existing file" src="https://phasegenomics.github.io/images/use_existing_file.jpg" width="80%">
+</center>
 
 __Figure 3.6__ Choosing to Use an Existing File during Sample Creation.
 
 Once you have selected all the files you wish to use for the sample, clicking the Upload button will upload any new files you selected and then begin running the sample. A progress bar will be shown for any files that are actively being uploaded for the job.
 
-![sample uploading](https://phasegenomics.github.io/images/sample_uploading.jpg)
+<center>
+<img alt="sample uploading" src="https://phasegenomics.github.io/images/sample_uploading.jpg" width="80%">
+</center>
 
 __Figure 3.7__ Uploading Files to Begin Sample Analysis.
 
