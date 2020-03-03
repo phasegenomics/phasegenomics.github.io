@@ -23,7 +23,7 @@ This page will show you how to use the Phase Gneomics platform website.
 ---------------------
 To begin using the Phase Genomics platform, you need to create an account. To do that, go to the Phase Genomics platform website [https://platform.phasegenomics.com](https://platform.phasegenomics.com) and click the "Welcome" button [A] in the top right of the page, then select "Register" [B] from the dropdown.
 
-![creating an account](https://phasegenomics.github.io/images/create_account.jpg =400x)
+<img alt="creating an account" src="https://phasegenomics.github.io/images/create_account.jpg" width="60%">
 
 __Figure 1.1__ Creating an account on the Phase Genomics platform.
 
