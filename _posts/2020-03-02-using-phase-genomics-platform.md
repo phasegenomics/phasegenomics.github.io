@@ -23,15 +23,19 @@ This page will show you how to use the Phase Gneomics platform website.
 ---------------------
 To begin using the Phase Genomics platform, you need to create an account. To do that, go to the Phase Genomics platform website [https://platform.phasegenomics.com](https://platform.phasegenomics.com) and click the "Welcome" button [A] in the top right of the page, then select "Register" [B] from the dropdown.
 
+<center>
 <img alt="creating an account" src="https://phasegenomics.github.io/images/create_account.jpg" width="80%">
 
 __Figure 1.1__ Creating an account on the Phase Genomics platform.
+</center>
 
 This will take you to the Account Registration page, where you can enter the information for your account [A]. Note that the "Organization Code" field is optional. Organization Codes are 6-digit alphanumeric codes. If you have been given an Organization Code by someone else in your organization (your lab, team, company, etc.), entering the Organization Code here will automatically request your account to join that Organization when it is created. You can always join an Organization later if you don't have a code when you create your account. Once you have entered all your account info, click the Register button [B] to submit your information.
 
-![account registration page](https://phasegenomics.github.io/images/enter_account_info.jpg)
+<center>
+<img alt="account registration page" src="https://phasegenomics.github.io/images/enter_account_info.jpg" width="80%">
 
 __Figure 1.2__ Entering account information on the Account Registration page.
+</center>
 
 Our Terms of Service will appear after you click the Register button. Please read these terms and click "Accept" to accept the terms, or "Decline" to refuse them. To accept the terms, you must read and scroll all the way to the bottom of the terms. If you click Decline, you will be taken back to the Account Registration page. Note that acceptance of the Terms of Service is required to be able to upload data to the Phase Genomics platform and to be able to utilize the bioinformatics capabilities of the platform.
 
