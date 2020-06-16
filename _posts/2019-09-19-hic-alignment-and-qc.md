@@ -8,7 +8,7 @@ Proper alignment of Hi-C data is critical to getting great results. It's also th
 
 Our Hi-C kits and protocols have been optimized to generate more useful Hi-C reads by doing things like reducing the proportion of split reads in the library. This means that the guidelines offered for other forms of Hi-C data may be incorrect with data from our kits, and that tools which infer library quality from the proportion of split reads (such as [HiCUP](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4706059/)) do not generate a reliable QC signal.
 
-We recommend the following steps for alignment and QC of our data. It's the method we use ourselves as well - there are no proprietary alignment tricks we use.
+We recommend the following steps for alignment and QC of our data. It's the method we use ourselves as well - there are no proprietary alignment tricks we use. As an aligner, we recommend BWA (version 0.7.17 or higher is required for the -5 option for Hi-C data), as Bowtie2 has performed slightly worse in our experience.
 
 1   Alignment
 ---------------------
