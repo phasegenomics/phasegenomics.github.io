@@ -13,11 +13,16 @@ We recommend the following steps for alignment and QC of our data. It's the meth
 1   Alignment
 ---------------------
 ### Short Answer
+First, generate an index file of your assembly FASTA with
+> `bwa index -a swtsw [assembly.fasta]`
+
 Align your Hi-C data with:
 > `bwa mem -5SP [assembly.fasta] [fwd_hic.fastq] [rev_hic.fastq] | samtools view -S -h -b -F 2316 > [aligned.bam]`
 
 If you would like to use `samblaster` to flag PCR duplicates (we do), you can insert it into the pipeline like this:
 > `bwa mem -5SP [assembly.fasta] [fwd_hic.fastq] [rev_hic.fastq] | samblaster | samtools view -S -h -b -F 2316 > [aligned.bam]`
+
+If the BAM you created is not already sorted by read name, you will also need to sort it by read name with `samtools sort -n [aligned.bam] -o [aligned.sorted.bam]`. However, this may not be necessary depending what your read files looks like and what version of `bwa` you are using.
 
 ### More Details
 Alignment of Hi-C data typically requires the use of an aligner that has been modified for Hi-C data. This is because Hi-C data intentionally contains paired reads which can come from very far away, or even between chromosomes, following a very different statistical distribution from things like shotgun or mate pair libraries. To our knowledge, only [bwa](http://bio-bwa.sourceforge.net) and [minimap2](https://github.com/lh3/minimap2) have such modifications (please [let us know](mailto:support@phasegenomics.com) if we're wrong!). Also, Heng Li's [hickit](https://github.com/lh3/hickit) has some useful information about aligning Hi-C reads, and may have some helpful examples.
@@ -30,7 +35,9 @@ Lastly, it is usually helpful to flag PCR duplicates, both as part of QC (the re
 ---------------------
 ### Short Answer
 After aligning, run our QC tool [hic_qc.py](https://github.com/phasegenomics/hic_qc) with: 
-> `hic_qc.py -b [aligned.bam] -r -o [output_file_prefix]`
+> `hic_qc.py -b [aligned.bam] -o [output_file_prefix]`
+
+The `-n` option is also commonly, which causes `hic_qc.py` to only look at the first `n` reads in the BAM file. If `-n` is set to `-1`, all reads in the BAM file are examined. 
 
 The report it generates includes a sequencing recommendation; [contact us](mailto:support@phasegenomics.com) if you don't get a "Pass" and be sure to attach your report.
 
