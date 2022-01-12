@@ -14,7 +14,7 @@ We recommend the following steps for alignment and QC of our data. It's the meth
 ---------------------
 ### Short Answer
 First, generate an index file of your assembly FASTA with
-> `bwa index -a swtsw [assembly.fasta]`
+> `bwa index -a bwtsw [assembly.fasta]`
 
 Align your Hi-C data with:
 > `bwa mem -5SP [assembly.fasta] [fwd_hic.fastq] [rev_hic.fastq] | samtools view -S -h -b -F 2316 > [aligned.bam]`
