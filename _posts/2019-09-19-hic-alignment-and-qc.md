@@ -17,7 +17,7 @@ First, generate an index file of your assembly FASTA with
 > `bwa index -a bwtsw [assembly.fasta]`
 
 Align your Hi-C data with:
-> `bwa mem -5SP [assembly.fasta] [fwd_hic.fastq] [rev_hic.fastq] | samtools view -S -h -b -F 2316 > [aligned.bam]`
+> `bwa mem -5SP [assembly.fasta] [fwd_hic.fastq] [rev_hic.fastq] | samtools view -S -h -b -F 2304 > [aligned.bam]`
 
 If you would like to use `samblaster` to flag PCR duplicates (we do), you can insert it into the pipeline like this:
 > `bwa mem -5SP [assembly.fasta] [fwd_hic.fastq] [rev_hic.fastq] | samblaster | samtools view -S -h -b -F 2316 > [aligned.bam]`
