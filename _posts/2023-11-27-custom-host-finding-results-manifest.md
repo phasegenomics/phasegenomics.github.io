@@ -54,6 +54,6 @@ description: "This is a results manifest for the deliverable files for a custom 
 
 
   
-[^1]: Please note that samples with more than 1000 mobile element-host pairs will not have the heatmap figures due to visualization limitations.
+[^1]: Please note that samples with many mobile element-host pairs will not have the heatmap figures due to visualization limitations.
 
 
