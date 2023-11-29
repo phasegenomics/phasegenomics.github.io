@@ -27,7 +27,7 @@ description: "This is a results manifest for the deliverable files for a custom 
 - **inter_contig_linkages.tsv**: Counts of Hi-C links between two different contigs.
 - **min_copy_count_roc_plot.png**: Receiver operating characteristic (ROC) curve is used to determine the optimal copy count cut-off value.
 - **unfiltered_master_table.tsv**: This table shows metadata for all mobile-element to host associations, where each row is an association between a mobile element (mobile_contig_name) and a host (cluster_name).
-- **filtered_master_table.tsv**: This table shows metadata for all mobile-element to host associations after filtering, where each row is an association between a mobile element (mobile_element) and a host (cluster_name). Mobile element-host linkages are filtered as described in Uritskiy 2021, “Accurate viral genome reconstruction and host assignment with proximity-ligation sequencing”. Adapted from Uritskiy 2021: “Mobile element-host linkages are filtered to keep only connections with at least 2 Hi-C read links between the mobile element and host MAG, a connectivity ratio of 0.1, and intra-MAG connectivity of 10 links to remove false positives. For the final threshold value, a receiver operating characteristic (ROC) curve is used to determine the optimal copy-icount cut-off value. The optimal cut-off was determined from the ROC curve as the value that produces the point to the top left of the plot, or the cut-off that removed the maximum number of mobile element-host links while still finding at least one host for the maximum number of mobile elements.”
+- **filtered_master_table.tsv**: This table shows metadata for all mobile-element to host associations after filtering, where each row is an association between a mobile element (mobile_element) and a host (cluster_name). Mobile element-host linkages are filtered as described in Uritskiy 2021, “Accurate viral genome reconstruction and host assignment with proximity-ligation sequencing”. Adapted from Uritskiy 2021[^2]: “Mobile element-host linkages are filtered to keep only connections with at least 2 Hi-C read links between the mobile element and host MAG, a connectivity ratio of 0.1, and intra-MAG connectivity of 10 links to remove false positives. For the final threshold value, a receiver operating characteristic (ROC) curve is used to determine the optimal copy-icount cut-off value. The optimal cut-off was determined from the ROC curve as the value that produces the point to the top left of the plot, or the cut-off that removed the maximum number of mobile element-host links while still finding at least one host for the maximum number of mobile elements.”
 
 
 | Column | Description |
@@ -55,5 +55,7 @@ description: "This is a results manifest for the deliverable files for a custom 
 
   
 [^1]: Please note that samples with many mobile element-host pairs will not have the heatmap figures due to visualization limitations.
+[^2]: Uritskiy, G. et al. Accurate viral genome reconstruction and host assignment with proximity-ligation sequencing. 2021.06.14.448389 Preprint at https://doi.org/10.1101/2021.06.14.448389 (2021).
+
 
 
