@@ -2,7 +2,7 @@
 layout: post
 title: "Using Phase Genomics' Web Platform for ProxiMeta Metagenome Analysis"
 date: 2020-03-02
-description: "The Phase Genomics platform website ([https://platform.phasegenomics.com](https://platform.phasegenomics.com)) offers powerful capabilities to combine data from our [Hi-C kits](http://phasegenomics.com/products/proximeta/) with other metagenomic data, delivering rich biological insights by leveraging the chromatin structure information of Hi-C. In addition to delivering more high-quality genomes than any other method, ProxiMeta offers the unique capability to perform host attribution for plasmids, viruses, AMR genes, and other mobile elements with no additional special experimental requirements. This page will show you how to use the Phase Gneomics platform website."
+description: "The Phase Genomics platform website ([https://platform.phasegenomics.com](https://platform.phasegenomics.com)) offers powerful capabilities to combine data from our [Hi-C kits](http://phasegenomics.com/products/proximeta/) with other metagenomic data, delivering rich biological insights by leveraging the chromatin structure information of Hi-C. In addition to delivering more high-quality genomes than any other method, ProxiMeta offers the unique capability to perform host attribution for plasmids, viruses, AMR genes, and other mobile elements with no additional special experimental requirements. This page will show you how to use the Phase Genomics platform website."
 ---
 The Phase Genomics platform website ([https://platform.phasegenomics.com](https://platform.phasegenomics.com)) offers powerful capabilities to combine data from our [Hi-C kits](http://phasegenomics.com/products/proximeta/) with other metagenomic data, delivering rich biological insights by leveraging the chromatin structure information of Hi-C.
 
@@ -12,10 +12,11 @@ This page will show you how to use the Phase Gneomics platform website.
 
 ## Table of Contents
 
-* [Create an Account](#account_creation)
-* [Uploading a File](#uploading_files)
-* [Starting a Sample Analysis](#sample_analysis)
-* [File Type Guidelines](#file_type_guidelines)
+- [Table of Contents](#table-of-contents)
+- [1   Create an Account](#1---create-an-account)
+- [2   Uploading a File](#2---uploading-a-file)
+- [3   Starting a Sample Analysis](#3---starting-a-sample-analysis)
+- [4   File Type Guidelines](#4---file-type-guidelines)
 
 <a name="account_creation"></a>
 
