@@ -8,7 +8,7 @@ The Phase Genomics platform website ([https://platform.phasegenomics.com](https:
 
 In addition to delivering more high-quality genomes than any other method, ProxiMeta offers the unique capability to perform host attribution for plasmids, viruses, AMR genes, and other mobile elements with no additional special experimental requirements.
 
-This page will show you how to use the Phase Gneomics platform website.
+This page will show you how to use the Phase Genomics platform website.
 
 ## Table of Contents
 
