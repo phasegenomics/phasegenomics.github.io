@@ -5,7 +5,6 @@ date: 2023-09-05
 description: "This results manifest describes the deliverables for a standard ProxiMeta project."
 ---
 
-# ProxiMeta Results Manifest
 
 The following manifest lists all files found in the ProxiMeta tarball:
 
