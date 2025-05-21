@@ -36,21 +36,21 @@ Since each read occupies 4 lines, divide the total line count by 4 to determine 
 
 ### Downsampling with BBTools
 
-1. **Download and extract BBTools:**
+#### 1. **Download and extract BBTools:**
 
 ```bash
 wget https://sourceforge.net/projects/bbmap/files/latest/download -O bbtools.tar.gz
 tar -xvzf bbtools.tar.gz
 ```
 
-2. **Add to PATH (adjust install path as needed):**
+#### 2. **Add to PATH (adjust install path as needed):**
 
 ```bash
 echo 'export PATH=~/bbtools_install/bbmap:$PATH' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-3. **Run the `reformat.sh` tool to downsample:**
+#### 3. **Run the `reformat.sh` tool to downsample:**
 
 Determine the `samplerate` by dividing your desired target (e.g., 150 million) by your current number of read pairs.  
 The example below uses `samplerate=0.2`; adjust this value accordingly.
@@ -82,5 +82,5 @@ Please download and complete the [Data Manifest](https://phasegenomics.github.io
 
 Once your data and manifest are ready:
 
-- Contact Phase Genomics to receive **sFTP credentials**
+- Provide Phase Genomics with your data manifest to receive **sFTP credentials**
 - Use those credentials to upload your files to our secure server by following our [sFTP Guide](https://phasegenomics.github.io/2023/07/28/ftp-guide.html)
