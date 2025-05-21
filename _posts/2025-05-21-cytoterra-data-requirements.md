@@ -82,5 +82,5 @@ Please download and complete the [Data Manifest](https://phasegenomics.github.io
 
 Once your data and manifest are ready:
 
-- Contact Phase Genomics to receive **sFTP credentials**
+- Provide Phase Genomics with your data manifest to receive **sFTP credentials**
 - Use those credentials to upload your files to our secure server by following our [sFTP Guide](https://phasegenomics.github.io/2023/07/28/ftp-guide.html)
