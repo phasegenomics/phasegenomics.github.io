@@ -7,7 +7,7 @@ description: "A description of data requirements for the CytoTerra platform, inc
 
 ## Summary of Data Requirements
 
-To ensure optimal performance of the **CytoTerra** platform, datasets should contain **100–250 million Hi-C read pairs**, with at least:
+To ensure optimal performance of the **CytoTerra** platform, datasets should contain **150–250 million Hi-C read pairs**, with at least:
 
 - **100 million high-quality read pairs**
 - **≥20% same-strand read pairs**
