@@ -1,3 +1,10 @@
+---
+layout: post
+title: "Data Retention Policy"
+date: 2026-08-06
+description: "Phase Genomics data retention policy."
+---
+
 # Data Retention Policy
 
 **Implementation Date:** 01 August 2026
