@@ -5,8 +5,6 @@ date: 2026-08-01
 description: "Phase Genomics data retention policy."
 ---
 
-# Data Retention Policy
-
 **Implementation Date:** 01 August 2026
 
 ## 1. Data Retention Period
